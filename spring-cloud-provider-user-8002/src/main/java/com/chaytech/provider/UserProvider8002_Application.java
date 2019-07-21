@@ -1,4 +1,4 @@
-package com.chaytech.consumer;
+package com.chaytech.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,9 +12,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 // 本服务启动后会自动注册进eureka服务中
 @EnableEurekaClient
-public class UserConsumer80_Application {
+public class UserProvider8002_Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(UserConsumer80_Application.class,args);
+        SpringApplication.run(UserProvider8002_Application.class,args);
     }
 }

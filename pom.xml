@@ -94,5 +94,8 @@
         <module>spring-cloud-provider-user</module>
         <module>spring-cloud-consumer-user</module>
         <module>spring-cloud-eureka</module>
+        <module>spring-cloud-provider-user-8002</module>
+        <module>spring-cloud-provider-user-8003
+        </module>
     </modules>
 </project>

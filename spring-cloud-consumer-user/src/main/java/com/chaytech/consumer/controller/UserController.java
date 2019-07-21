@@ -15,7 +15,8 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    private static final String REST_URL_PREFIX = "http://127.0.0.1:8001";
+    // private static final String REST_URL_PREFIX = "http://127.0.0.1:8001";
+    private static final String REST_URL_PREFIX = "http://USER-PROVIDER";
 
     @Autowired
     private RestTemplate restTemplate;
