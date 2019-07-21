@@ -2,9 +2,7 @@ package com.chaytech.consumer.controller;
 
 import com.chaytech.model.user.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -22,19 +20,24 @@ public class UserController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/consumer/user/add")
+    @PostMapping("/consumer/user/add")
     public boolean add(UserEntity user) {
         return restTemplate.postForObject(REST_URL_PREFIX + "/user/createUser", user, Boolean.class);
     }
 
-    @RequestMapping(value = "/consumer/user/getUser/{id}")
+    @GetMapping("/consumer/user/getUser/{id}")
     public UserEntity get(@PathVariable("id") Integer id) {
         return restTemplate.getForObject(REST_URL_PREFIX + "/user/getUser/" + id, UserEntity.class);
     }
 
     @SuppressWarnings("unchecked")
-    @RequestMapping(value = "/consumer/user/listUser")
+    @GetMapping("/consumer/user/listUser")
     public List<UserEntity> list() {
         return restTemplate.getForObject(REST_URL_PREFIX + "/user/listUser", List.class);
+    }
+
+    @GetMapping("/consumer/user/discovery")
+    public Object discovery() {
+        return restTemplate.getForObject(REST_URL_PREFIX + "/user/discovery", Object.class);
     }
 }

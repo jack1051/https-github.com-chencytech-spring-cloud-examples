@@ -22,7 +22,7 @@ public class UserController {
     @Autowired
     private IUserService userService;
     @Autowired
-    private DiscoveryClient client;
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("/user/createUser")
     public boolean createUser(@RequestBody  UserEntity user){
@@ -42,14 +42,15 @@ public class UserController {
 
     @GetMapping("/user/discovery")
     public Object discovery() {
-        List<String> list = client.getServices();
-        System.out.println("**********" + list);
+        // 获取微服务list
+        List<String> list = discoveryClient.getServices();
+        System.out.println("servies：" + list);
 
-        List<ServiceInstance> srvList = client.getInstances("USER-PROVIDER");
+        // 根据服务名获取指定服务接口
+        List<ServiceInstance> srvList = discoveryClient.getInstances("USER-PROVIDER");
         for (ServiceInstance element : srvList) {
-            System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t"
-                    + element.getUri());
+            System.out.println(element.getServiceId() + "\t" + element.getHost() + "\t" + element.getPort() + "\t" + element.getUri());
         }
-        return this.client;
+        return this.discoveryClient;
     }
 }

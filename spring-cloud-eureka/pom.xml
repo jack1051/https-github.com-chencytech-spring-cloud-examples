@@ -14,5 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>eureka</module>
+        <module>eureka-cluster-one</module>
+        <module>eureka-cluster-two</module>
     </modules>
 </project>
