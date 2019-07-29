@@ -1,5 +1,7 @@
 package com.chaytech.api.user;
 
+import com.chaytech.api.fallback.UserFallBack;
+import com.chaytech.api.fallback.UserFallBackFactory;
 import com.chaytech.model.user.UserEntity;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,8 @@ import java.util.List;
  * @date 2019/07/27 18:33
  */
 @FeignClient(value = "USER-PROVIDER")
+//@FeignClient(value = "USER-PROVIDER", fallback = UserFallBack.class)
+//@FeignClient(value = "USER-PROVIDER", fallbackFactory = UserFallBackFactory.class)
 public interface UserApi {
 
     @PostMapping("/user/createUser")

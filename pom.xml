@@ -98,5 +98,6 @@
         <module>spring-cloud-provider-user-8003</module>
         <module>spring-cloud-consumer-user-feign</module>
         <module>spring-cloud-api</module>
+        <module>spring-cloud-hystrix</module>
     </modules>
 </project>
