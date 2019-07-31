@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: application # 对应{application}部分
+      profile: dev # 对应{profile}部分
+      label: master # 对应git的分支
+      uri: http://localhost:9002 # 配置中心服务端地址
