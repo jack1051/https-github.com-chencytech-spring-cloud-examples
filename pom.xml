@@ -100,5 +100,6 @@
         <module>spring-cloud-api</module>
         <module>spring-cloud-hystrix</module>
         <module>spring-cloud-config</module>
+        <module>spring-cloud-zuul</module>
     </modules>
 </project>
